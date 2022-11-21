@@ -1,9 +1,9 @@
 extends Actor
 
 func _physics_process(delta: float) -> void:
-	var is_jump_interrupted: = Input.is_action_just_released("jump") and velocity.y < 0.0
-	velocity = calculate_move_velocity(velocity, get_direction(), speed, is_jump_interrupted)
-	velocity = move_and_slide(velocity, Vector2.UP)
+	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
+	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
+	_velocity = move_and_slide(_velocity, Vector2.UP)
 
 func get_direction() -> Vector2:
 	# moving to the right is 1.0, to the left is -1.0
