@@ -5,6 +5,9 @@
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 
 [node name="LevelTemplate" type="Node2D"]
+__meta__ = {
+"_edit_vertical_guides_": [ 3198.0 ]
+}
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
@@ -19,5 +22,13 @@ position = Vector2( 627, 456 )
 speed = Vector2( 800, 1500 )
 gravity = 4000.0
 
+[node name="Camera2D" parent="Player" index="2"]
+limit_right = 3200
+
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
-position = Vector2( 1102, 482 )
+position = Vector2( 1654, 502 )
+
+[node name="Enemy2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 2532, 509 )
+
+[editable path="Player"]
