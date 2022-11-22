@@ -1,6 +1,9 @@
 extends "res://src/Actors/Actor.gd"
 
 func _ready() -> void:
+	# initially disable physics processing so enemy only starts moving
+	# when the player sees it
+	set_physics_process(false)
 	# initially move left, towards the player
 	_velocity.x = -speed.x
 
