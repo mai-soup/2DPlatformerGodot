@@ -26,6 +26,12 @@ shape = SubResource( 1 )
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2( 0, -189 )
 current = true
+limit_left = 0
+limit_top = 0
+limit_smoothed = true
+smoothing_enabled = true
+drag_margin_left = 0.0
+drag_margin_right = 0.0
 
 [node name="EnemyDetector" type="Area2D" parent="."]
 modulate = Color( 0.0196078, 0.0431373, 0.654902, 1 )
