@@ -2,13 +2,13 @@ extends Actor
 
 export var stomp_impact: = 1000.0
 
-func _on_EnemyDetector_area_entered(area: Area2D) -> void:
+func _on_EnemyDetector_area_entered(_area: Area2D) -> void:
 	_velocity = calculate_stomp_velocity(_velocity, stomp_impact)
 
-func _on_EnemyDetector_body_entered(body: Node) -> void:
+func _on_EnemyDetector_body_entered(_body: Node) -> void:
 	die()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0
 	_velocity = calculate_move_velocity(_velocity, get_direction(), speed, is_jump_interrupted)
 	_velocity.y = move_and_slide(_velocity, Vector2.UP).y
