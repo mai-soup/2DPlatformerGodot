@@ -83,6 +83,7 @@ tracks/1/keys = {
 [node name="Coin" type="Area2D"]
 position = Vector2( 0, 4 )
 collision_layer = 4
+monitorable = false
 script = ExtResource( 2 )
 
 [node name="coin" type="Sprite" parent="."]
