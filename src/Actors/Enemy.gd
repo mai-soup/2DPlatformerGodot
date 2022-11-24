@@ -15,7 +15,7 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 		return
 	
 	# otherwise, make sure enemy can't be collided with and delete it
-	get_node("CollisionShape2D").disabled = true
+	get_node("CollisionShape2D").set_deferred("disabled", true)
 	PlayerData.score += score
 	queue_free()
 
