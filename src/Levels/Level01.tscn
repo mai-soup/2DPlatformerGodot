@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=2]
@@ -7,21 +7,27 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=5]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=6]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=7]
+[ext_resource path="res://src/UI/HUD.tscn" type="PackedScene" id=8]
 
 [node name="Level01" type="Node2D"]
 __meta__ = {
 "_edit_vertical_guides_": [ 3198.0, 7040.0 ]
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="BgLayer" type="CanvasLayer" parent="."]
 layer = -100
 
-[node name="Background" type="TextureRect" parent="CanvasLayer"]
+[node name="Background" type="TextureRect" parent="BgLayer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_right = 1920.0
 margin_bottom = 1080.0
 texture = ExtResource( 5 )
+
+[node name="HudLayer" type="CanvasLayer" parent="."]
+layer = 101
+
+[node name="HUD" parent="HudLayer" instance=ExtResource( 8 )]
 
 [node name="Player" parent="." instance=ExtResource( 7 )]
 position = Vector2( 198, 710 )
