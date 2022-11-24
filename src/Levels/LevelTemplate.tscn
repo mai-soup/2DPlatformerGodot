@@ -1,10 +1,12 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/tileset.tres" type="TileSet" id=1]
 [ext_resource path="res://src/Actors/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://src/Actors/Enemy.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/background.png" type="Texture" id=4]
 [ext_resource path="res://src/Objects/Coin.tscn" type="PackedScene" id=5]
+[ext_resource path="res://src/Objects/Portal.tscn" type="PackedScene" id=6]
+[ext_resource path="res://src/Levels/Level02.tscn" type="PackedScene" id=7]
 
 [node name="LevelTemplate" type="Node2D"]
 __meta__ = {
@@ -35,6 +37,7 @@ speed = Vector2( 800, 1500 )
 gravity = 4000.0
 
 [node name="Camera2D" parent="Player" index="2"]
+current = false
 limit_right = 3200
 
 [node name="Enemy" parent="." instance=ExtResource( 3 )]
@@ -44,9 +47,13 @@ position = Vector2( 1654, 502 )
 position = Vector2( 2532, 509 )
 
 [node name="Coin" parent="." instance=ExtResource( 5 )]
-position = Vector2( 845, 408 )
+position = Vector2( 887, 418 )
 
 [node name="Coin2" parent="." instance=ExtResource( 5 )]
-position = Vector2( 960, 408 )
+position = Vector2( 1001, 418 )
+
+[node name="Portal" parent="Coin2" instance=ExtResource( 6 )]
+position = Vector2( 128, 123 )
+next_scene = ExtResource( 7 )
 
 [editable path="Player"]
