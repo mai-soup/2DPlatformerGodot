@@ -1,5 +1,7 @@
 extends "res://src/Actors/Actor.gd"
 
+export var score: = 10
+
 func _ready() -> void:
 	# initially disable physics processing so enemy only starts moving
 	# when the player sees it
@@ -14,6 +16,7 @@ func _on_StompDetector_body_entered(body: Node) -> void:
 	
 	# otherwise, make sure enemy can't be collided with and delete it
 	get_node("CollisionShape2D").disabled = true
+	PlayerData.score += score
 	queue_free()
 
 func _physics_process(delta: float) -> void:
